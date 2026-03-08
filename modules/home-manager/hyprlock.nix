@@ -6,8 +6,6 @@ inputs: {
 }: let
   palette = config.colorScheme.palette;
   convert = inputs.nix-colors.lib.conversions.hexToRGBString;
-  selected_wallpaper_path = (import ../../lib/selected-wallpaper.nix config).wallpaper_path;
-
   backgroundRgb = "rgba(${convert ", " palette.base00}, 0.8)";
   surfaceRgb = "rgb(${convert ", " palette.base02})";
   foregroundRgb = "rgb(${convert ", " palette.base05})";
@@ -17,16 +15,19 @@ in {
     enable = true;
     settings = {
       general = {
-        # disable_loading_bar and no_fade_in removed in newer hyprlock versions
+        ignore_empty_input = true;
+      };
+      animations = {
+        enabled = false;
       };
       auth = {
         fingerprint.enabled = true;
       };
       background = {
         monitor = "";
-        path = selected_wallpaper_path;
-        # blur_passes = 3;
-        # brightness = 0.5;
+        path = "~/.config/omarchy/current/background";
+        color = backgroundRgb;
+        blur_passes = 3;
       };
 
       input-field = {
@@ -47,7 +48,7 @@ in {
         # placeholder_color removed in newer hyprlock - using default
         placeholder_text = "  Enter Password 󰈷 ";
         check_color = "rgba(131, 192, 146, 1.0)";
-        fail_text = "Wrong";
+        fail_text = "<i>$FAIL ($ATTEMPTS)</i>";
 
         rounding = 0;
         shadow_passes = 0;
