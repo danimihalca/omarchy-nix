@@ -36,7 +36,7 @@ in {
     (import ./ghostty.nix)
     (import ./alacritty.nix)
     (import ./kitty.nix)
-    (import ./btop.nix)
+    # (import ./btop.nix)
     (import ./direnv.nix)
     (import ./git.nix)
     (import ./mako.nix)
