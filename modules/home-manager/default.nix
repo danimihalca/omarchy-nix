@@ -73,11 +73,11 @@ in {
       recursive = true;
     };
     # Deploy logo.txt to ~/.local/share/omarchy/ (read-only source)
-    ".local/share/omarchy/logo.txt".source = ../../config/branding/logo.txt;
-    ".config/omarchy/screensaver" = {
-      source = ../../config/screensaver;
-      recursive = true;
-    };
+    # ".local/share/omarchy/logo.txt".source = ../../config/branding/logo.txt;
+    # ".config/omarchy/screensaver" = {
+    #   source = ../../config/screensaver;
+    #   recursive = true;
+    # };
     ".config/omarchy/webapp-icons" = {
       source = ../../config/webapp-icons;
       recursive = true;
@@ -133,12 +133,12 @@ in {
   ];
 
   # Copy logo.txt to screensaver.txt on first use (user-customizable)
-  home.activation.copyScreensaverTxt = lib.hm.dag.entryAfter ["writeBoundary"] ''
-    if [ ! -f "$HOME/.config/omarchy/branding/screensaver.txt" ]; then
-      mkdir -p "$HOME/.config/omarchy/branding"
-      cp "$HOME/.local/share/omarchy/logo.txt" "$HOME/.config/omarchy/branding/screensaver.txt"
-    fi
-  '';
+  # home.activation.copyScreensaverTxt = lib.hm.dag.entryAfter ["writeBoundary"] ''
+  #   if [ ! -f "$HOME/.config/omarchy/branding/screensaver.txt" ]; then
+  #     mkdir -p "$HOME/.config/omarchy/branding"
+  #     cp "$HOME/.local/share/omarchy/logo.txt" "$HOME/.config/omarchy/branding/screensaver.txt"
+  #   fi
+  # '';
 
   colorScheme = selectedColorScheme;
 
