@@ -23,7 +23,7 @@ in {
     playerctl
     bibata-cursors
     gnome-themes-extra
-    blueberry
+    # blueberry
     clipse
     xdg-utils
     xdg-terminal-exec
