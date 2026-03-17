@@ -49,7 +49,7 @@ in {
     ./chromium.nix
     ./brave.nix
     ./xdph.nix
-    ./hyprland-preview-share-picker.nix
+    # ./hyprland-preview-share-picker.nix
     ./hyprsunset.nix
     ./desktop-entries.nix
     ./light-theme-monitor.nix

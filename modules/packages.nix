@@ -1,6 +1,6 @@
 {pkgs, config, lib}: let
   plymouth-theme-omarchy = pkgs.callPackage ../packages/plymouth-theme-omarchy.nix {};
-  hyprland-preview-share-picker = pkgs.callPackage ../packages/hyprland-preview-share-picker.nix {};
+  # hyprland-preview-share-picker = pkgs.callPackage ../packages/hyprland-preview-share-picker.nix {};
   voxtype = pkgs.callPackage ../packages/voxtype.nix {};
   terminaltexteffects = pkgs.callPackage ../packages/terminaltexteffects.nix {};
   cfg = config.omarchy;
@@ -38,7 +38,7 @@ in {
     wf-recorder
     gpu-screen-recorder
     slurp
-    hyprland-preview-share-picker  # Custom package
+    # hyprland-preview-share-picker  # Custom package
     
     # Audio management
     wiremix
